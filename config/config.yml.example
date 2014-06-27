@@ -1,0 +1,6 @@
+development:
+  server: thin
+  yandex_api:
+    app_id: your_app_id
+    app_password: your_app_password
+
