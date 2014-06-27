@@ -1,18 +1,23 @@
 require 'bundler'
 Bundler.require
-set :server, 'thin' 
+
+config_file 'config/config.yml'
 
 enable :sessions
 
 before do
-  @webmaster = Yandex::Webmaster.new(app_id: APP_ID, app_password: APP_PASSWORD)
+  @webmaster = Yandex::Webmaster.new(settings.yandex_api)
   @token = @webmaster.configuration.oauth_token
 end
 
-
 get '/' do
   redirect '/oauth/connect' if session[:access_token].blank?
-  @webmaster.hosts.all.map(&:name).join('<br/>')
+  'Access token: ' + session[:access_token]
+end
+
+post '/hosts/:host_id/original-texts' do
+  'Host ID: ' + params[:host_id]
+  # some magic
 end
 
 get '/oauth/access_token' do
