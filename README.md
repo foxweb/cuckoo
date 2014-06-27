@@ -20,6 +20,13 @@ $ open http://localhost:4567/
 
 POST-запрос с оригинальным текстом на URL `/hosts/:host_id/original-texts/`.
 
+Пример с использованием `httpie`:
+
+``` sh
+$ http -f POST http://localhost:4567/hosts/19964/original-texts original_text="Hello world * 100 times"
+```
+
+
 ## Ссылки
 * [Авторизация клиента в Yandex API](https://oauth.yandex.ru/)
 * [Добавление оригинального текста](http://api.yandex.ru/webmaster/doc/dg/reference/host-original-texts-add.xml)

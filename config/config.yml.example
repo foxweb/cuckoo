@@ -1,6 +1,6 @@
 development:
-  server: thin
+  server: puma
+  demo_token: temporary_token
   yandex_api:
     app_id: your_app_id
     app_password: your_app_password
-
