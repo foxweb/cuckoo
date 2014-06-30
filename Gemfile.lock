@@ -1,5 +1,6 @@
-PATH
-  remote: ../yandex-webmaster
+GIT
+  remote: git://github.com/foxweb/yandex-webmaster.git
+  revision: c613adb3bdb3fb84669ccef4962b161c8833ddde
   specs:
     yandex-webmaster (0.2.0)
       attrio
