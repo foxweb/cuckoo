@@ -28,7 +28,7 @@ $ open http://localhost:4567/
   Access token: b213f90d2abe4cdf9bbadc3cba4f36fb
   ```
 
-6. Теперь можно отправлять оригинальный тексты в Яндекс POST-запросом с оригинальным текстом на URL `http://localhost:4567/hosts/:host_id/original-texts/`.
+6. Теперь можно отправлять оригинальные тексты в Яндекс POST-запросом на URL `http://localhost:4567/hosts/:host_id/original-texts/`.
 
   Пример с использованием [httpie](https://github.com/jakubroztocil/httpie):
 
