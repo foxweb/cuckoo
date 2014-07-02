@@ -33,7 +33,8 @@ $ open http://localhost:4567/
   Пример с использованием [httpie](https://github.com/jakubroztocil/httpie):
 
   ``` sh
-  $ http -f POST http://localhost:4567/hosts/123456789/original-texts original_text="Hello world * 100 times"
+  $ http --session=user GET localhost:4567/ # авторизация и сохранение сессии
+  $ http --session=user -f POST localhost:4567/hosts/123456789/original-texts original_text="Hello world * 100 times"
   ```
   
   Если происходит ошибка — проверьте длину отправляемого текста — от 500 до 32000 знаков.
@@ -50,9 +51,7 @@ $ open http://localhost:4567/
 2. Используется не полностью рабочая версия гема [yandex-webmaster](https://github.com/foxweb/yandex-webmaster). По хорошему, весь функционал API реализован там, но гем заброшен и потерял актуальность.
    Там нет поддержки оригинальных текстов и не работает получение списка сайтов в Вебмастере.
    В данном приложении задействован только функционал авторизации.
-3. Поскольку авторизация проходит через браузер, то непросто отлаживать приложение в консоли без сохранения сессий.
-   Для обхода этого ограничения в 44 строке `cuckoo.rb` используется параметр `settings.demo_token` из файла конфигурации.
-4. Тестов нет.
+3. Тестов нет.
 
 ## Ссылки
 * [Авторизация клиента в Yandex API](https://oauth.yandex.ru/)
